@@ -21,7 +21,7 @@ const Testimonials = () => {
       <h2 className="text-3xl font-bold">Testimonials</h2>
       <div className="mt-4 space-y-4">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="p-4 bg-white shadow rounded">
+          <div key={index} className="p-4 bg-white shadow rounded animate-fade-in">
             <p className="italic">"{testimonial.quote}"</p>
             <p className="mt-2 font-bold">- {testimonial.author}</p>
           </div>
