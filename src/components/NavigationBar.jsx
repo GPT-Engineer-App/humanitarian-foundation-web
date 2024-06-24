@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">HUFIDA</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">HUFIDA</Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          <li><a>About Us</a></li>
-          <li><a>Projects</a></li>
-          <li><a href="#get-involved">Get Involved</a></li>
-          <li><a>News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/get-involved">Get Involved</Link></li>
+          <li><Link to="/news">News</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
     </div>
