@@ -1,4 +1,6 @@
 import React from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 const currentProjects = [
   {
@@ -8,6 +10,7 @@ const currentProjects = [
     progress: '70%',
     involvement: 'You can help by donating or volunteering for our water testing and distribution events.',
     image: '/images/project1.jpg',
+    position: [1.2921, 36.8219], // Nairobi, Kenya
   },
   {
     title: 'Educational Programs',
@@ -16,6 +19,7 @@ const currentProjects = [
     progress: '50%',
     involvement: 'Join us as a volunteer teacher or donate educational materials.',
     image: '/images/project2.jpg',
+    position: [0.3476, 32.5825], // Kampala, Uganda
   },
   {
     title: 'Healthcare Services',
@@ -24,6 +28,7 @@ const currentProjects = [
     progress: '80%',
     involvement: 'Support us by donating medical supplies or funds for renovation.',
     image: '/images/project3.jpg',
+    position: [-1.2921, 36.8219], // Nairobi, Kenya
   },
 ];
 
@@ -85,12 +90,20 @@ const Projects = () => {
       <section className="mb-10">
         <h2 className="text-3xl font-bold">Interactive Map</h2>
         <div className="mt-4">
-          <iframe
-            src="https://www.google.com/maps/d/embed?mid=1G5y1Z5y1Z5y1Z5y1Z5y1Z5y1Z5y1Z5y"
-            width="640"
-            height="480"
-            title="HUFIDA Operations Map"
-          ></iframe>
+          <MapContainer center={[1.2921, 36.8219]} zoom={5} style={{ height: "500px", width: "100%" }}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            {currentProjects.map((project, index) => (
+              <Marker key={index} position={project.position}>
+                <Popup>
+                  <h2>{project.title}</h2>
+                  <p>{project.description}</p>
+                </Popup>
+              </Marker>
+            ))}
+          </MapContainer>
         </div>
       </section>
     </div>

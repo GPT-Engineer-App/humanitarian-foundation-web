@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const settings = {
@@ -20,21 +21,43 @@ const HeroSection = () => {
         <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }}>
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
+            <motion.div 
+              className="max-w-md"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               <h1 className="mb-5 text-5xl font-bold">Empowering Africa's Future</h1>
               <p className="mb-5">Join us in making a difference through innovative development projects.</p>
-              <button className="btn btn-primary">Get Involved</button>
-            </div>
+              <motion.button 
+                className="btn btn-primary"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Get Involved
+              </motion.button>
+            </motion.div>
           </div>
         </div>
         <div className="hero-slide" style={{ backgroundImage: 'url(/images/another-banner.jpg)' }}>
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
+            <motion.div 
+              className="max-w-md"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               <h1 className="mb-5 text-5xl font-bold">Innovative Solutions</h1>
               <p className="mb-5">Creating sustainable solutions for African communities.</p>
-              <button className="btn btn-primary">Learn More</button>
-            </div>
+              <motion.button 
+                className="btn btn-primary"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Learn More
+              </motion.button>
+            </motion.div>
           </div>
         </div>
       </Slider>
