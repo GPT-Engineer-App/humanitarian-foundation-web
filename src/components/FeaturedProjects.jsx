@@ -1,4 +1,7 @@
 import React from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
   {
@@ -19,10 +22,20 @@ const projects = [
 ];
 
 const FeaturedProjects = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <div className="p-10 bg-base-200 text-center">
       <h2 className="text-3xl font-bold">Featured Projects</h2>
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <Slider {...settings} className="mt-4">
         {projects.map((project, index) => (
           <div key={index} className="card bg-base-100 shadow-xl transform transition-transform hover:scale-105">
             <figure><img src={project.image} alt={project.title} /></figure>
@@ -32,7 +45,7 @@ const FeaturedProjects = () => {
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
