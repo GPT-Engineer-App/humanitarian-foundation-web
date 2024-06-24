@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import AboutUs from './components/AboutUs';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
+import GetInvolved from './components/GetInvolved';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <FeaturedProjects />
       <Projects /> {/* Added Projects section */}
       <AboutUs />
+      <GetInvolved />
       <Testimonials />
       <Footer />
     </>

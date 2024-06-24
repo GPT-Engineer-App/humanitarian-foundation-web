@@ -10,7 +10,7 @@ const NavigationBar = () => {
         <ul className="menu menu-horizontal px-1">
           <li><a>About Us</a></li>
           <li><a>Projects</a></li>
-          <li><a>Get Involved</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
           <li><a>News</a></li>
           <li><a>Contact</a></li>
         </ul>
