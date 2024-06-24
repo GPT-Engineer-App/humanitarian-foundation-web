@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HeroSection from './components/HeroSection';
 import MissionStatement from './components/MissionStatement';
 import NavigationBar from './components/NavigationBar';
@@ -11,12 +12,24 @@ import News from './components/News';
 import Footer from './components/Footer';
 import GetInvolved from './components/GetInvolved';
 import Contact from './components/Contact'; // Added import
+import AboutUsPage from './pages/AboutUsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import GetInvolvedPage from './pages/GetInvolvedPage';
+import NewsPage from './pages/NewsPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <>
+    <Router>
       <NavigationBar />
-      <HeroSection />
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/get-involved" element={<GetInvolvedPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <MissionStatement />
       <QuickLinks />
       <FeaturedProjects />
@@ -27,7 +40,7 @@ function App() {
       <Testimonials />
       <Contact /> {/* Added Contact section */}
       <Footer />
-    </>
+    </Router>
   );
 }
 
