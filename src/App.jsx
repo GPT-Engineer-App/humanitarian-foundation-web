@@ -12,11 +12,11 @@ import News from './components/News';
 import Footer from './components/Footer';
 import GetInvolved from './components/GetInvolved';
 import Contact from './components/Contact'; // Added import
-import AboutUsPage from './pages/AboutUsPage';
-import ProjectsPage from './pages/ProjectsPage';
-import GetInvolvedPage from './pages/GetInvolvedPage';
-import NewsPage from './pages/NewsPage';
-import ContactPage from './pages/ContactPage';
+import AboutUsPage from './pages/AboutUs';
+import ProjectsPage from './pages/Projects';
+import GetInvolvedPage from './pages/GetInvolved';
+import NewsPage from './pages/News';
+import ContactPage from './pages/Contact';
 
 function App() {
   return (
