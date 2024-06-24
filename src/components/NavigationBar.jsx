@@ -12,7 +12,7 @@ const NavigationBar = () => {
           <li><a>Projects</a></li>
           <li><a href="#get-involved">Get Involved</a></li>
           <li><a>News</a></li>
-          <li><a href="#contact">Contact</a></li> <!-- Added Contact link -->
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
