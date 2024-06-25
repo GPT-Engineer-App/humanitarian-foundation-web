@@ -1,7 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { logPageView } from '../utils/analytics';
 
 const NavigationBar = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView();
+  }, [location]);
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
