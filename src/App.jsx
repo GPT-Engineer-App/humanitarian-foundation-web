@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Awareness from './pages/Awareness';
 import HeroSection from './components/HeroSection';
@@ -26,7 +27,13 @@ import ContactPage from './pages/Contact';
 import PartnersPage from './pages/Partners';
 import BlogPage from './pages/Blog';
 
+const TRACKING_ID = "UA-XXXXXXXXX-X"; // Replace with your Google Analytics tracking ID
+
 function App() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <Router>
       <NavigationBar />
