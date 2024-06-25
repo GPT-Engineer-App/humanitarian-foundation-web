@@ -16,6 +16,7 @@ const NavigationBar = () => {
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/partners">Partners</Link></li>
           <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/awareness">Awareness</Link></li>
         </ul>
       </div>
     </div>
