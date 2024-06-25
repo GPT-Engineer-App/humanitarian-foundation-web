@@ -29,7 +29,7 @@ const HeroSection = () => {
   return (
     <div className="hero min-h-screen">
       <Slider {...settings}>
-        <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }} role="img" aria-label="Hero Banner showing empowerment in Africa">
+        <div className="hero-slide bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }} role="img" aria-label="Hero Banner showing empowerment in Africa">
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <motion.div 
@@ -73,7 +73,7 @@ const HeroSection = () => {
             </motion.div>
           </div>
         </div>
-        <div className="hero-slide" style={{ backgroundImage: 'url(/images/another-banner.jpg)' }} role="img" aria-label="Banner showing innovative solutions">
+        <div className="hero-slide bg-cover bg-center" style={{ backgroundImage: 'url(/images/another-banner.jpg)' }} role="img" aria-label="Banner showing innovative solutions">
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <motion.div 
