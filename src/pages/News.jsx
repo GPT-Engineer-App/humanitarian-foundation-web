@@ -5,6 +5,7 @@ const NewsPage = () => {
   return (
     <div>
       <News />
+      <img src="path/to/image.jpg" alt="Descriptive text for the image" />
     </div>
   );
 };

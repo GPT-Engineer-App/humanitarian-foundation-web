@@ -6,6 +6,7 @@ const Loading = () => {
       <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
         <span className="visually-hidden">Loading...</span>
       </div>
+      <img src="path/to/loading-image.png" alt="Loading animation" className="mt-4" />
     </div>
   );
 };

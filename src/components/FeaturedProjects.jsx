@@ -8,16 +8,19 @@ const projects = [
     title: 'Clean Water Initiative',
     description: 'Providing access to clean and safe drinking water in rural areas.',
     image: '/images/project1.jpg',
+    alt: 'Clean Water Initiative Project',
   },
   {
     title: 'Educational Programs',
     description: 'Empowering children through education and skill development.',
     image: '/images/project2.jpg',
+    alt: 'Educational Programs Project',
   },
   {
     title: 'Healthcare Services',
     description: 'Improving healthcare facilities and services in underserved communities.',
     image: '/images/project3.jpg',
+    alt: 'Healthcare Services Project',
   },
 ];
 
@@ -38,7 +41,7 @@ const FeaturedProjects = () => {
       <Slider {...settings} className="mt-4">
         {projects.map((project, index) => (
           <div key={index} className="card bg-base-100 shadow-xl transform transition-transform hover:scale-105">
-            <figure><img src={project.image} alt={project.title} /></figure>
+            <figure><img src={project.image} alt={project.alt} /></figure>
             <div className="card-body">
               <h2 className="card-title">{project.title}</h2>
               <p>{project.description}</p>

@@ -83,7 +83,7 @@ const GetInvolved = () => {
       <section className="mb-10">
         <h2 className="text-3xl font-bold">Impact of Your Support</h2>
         <div className="mt-4">
-          <img src="/images/infographics/support-impact-infographic.png" alt="HUFIDA Support Impact Infographic" className="w-full h-auto" />
+          <img src="/images/infographics/support-impact-infographic.png" alt="Infographic showing the impact of HUFIDA's support" className="w-full h-auto" />
         </div>
       </section>
 
@@ -186,19 +186,19 @@ const GetInvolved = () => {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="card bg-base-100 shadow-xl">
               <div className="card-body">
-                <img src="/images/partner1.png" alt="Partner 1" className="w-full h-32 object-contain" />
+                <img src="/images/partner1.png" alt="Logo of Partner 1, supporting community outreach programs" className="w-full h-32 object-contain" />
                 <p className="mt-2">Partner 1 has been instrumental in supporting our community outreach programs.</p>
               </div>
             </div>
             <div className="card bg-base-100 shadow-xl">
               <div className="card-body">
-                <img src="/images/partner2.png" alt="Partner 2" className="w-full h-32 object-contain" />
+                <img src="/images/partner2.png" alt="Logo of Partner 2, providing funding for healthcare initiatives" className="w-full h-32 object-contain" />
                 <p className="mt-2">Partner 2 has provided significant funding for our healthcare initiatives.</p>
               </div>
             </div>
             <div className="card bg-base-100 shadow-xl">
               <div className="card-body">
-                <img src="/images/partner3.png" alt="Partner 3" className="w-full h-32 object-contain" />
+                <img src="/images/partner3.png" alt="Logo of Partner 3, collaborating on educational projects" className="w-full h-32 object-contain" />
                 <p className="mt-2">Partner 3 has collaborated with us on various educational projects.</p>
               </div>
             </div>
