@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useSupabaseClient } from '../integrations/supabaseClient';
-import { supabase } from '../integrations/supabaseClient';
+import { supabase } from '../integrations/supabase';
 
 const TaskForm = () => {
   const [name, setName] = useState('');
