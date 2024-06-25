@@ -31,6 +31,18 @@ import Breadcrumb from './components/Breadcrumb';
 import AdvancedSearch from './components/AdvancedSearch';
 import UserProfile from './components/UserProfile';
 import UserDashboard from './components/UserDashboard';
+import ProjectList from './components/ProjectList';
+import ProjectForm from './components/ProjectForm';
+import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
+import MilestoneList from './components/MilestoneList';
+import MilestoneForm from './components/MilestoneForm';
+import ResourceList from './components/ResourceList';
+import ResourceForm from './components/ResourceForm';
+import ProfileList from './components/ProfileList';
+import ProfileForm from './components/ProfileForm';
+import GroupProfileList from './components/GroupProfileList';
+import GroupProfileForm from './components/GroupProfileForm';
 
 const TRACKING_ID = "UA-XXXXXXXXX-X"; // Replace with your Google Analytics tracking ID
 
@@ -50,7 +62,18 @@ function App() {
         <Routes>
           <Route path="/" element={<div className="parallax" style={{backgroundImage: "url('/images/hero-banner.jpg')"}}><HeroSection /></div>} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects" element={<ProjectList />} />
+          <Route path="/projects/new" element={<ProjectForm />} />
+          <Route path="/tasks" element={<TaskList />} />
+          <Route path="/tasks/new" element={<TaskForm />} />
+          <Route path="/milestones" element={<MilestoneList />} />
+          <Route path="/milestones/new" element={<MilestoneForm />} />
+          <Route path="/resources" element={<ResourceList />} />
+          <Route path="/resources/new" element={<ResourceForm />} />
+          <Route path="/profiles" element={<ProfileList />} />
+          <Route path="/profiles/new" element={<ProfileForm />} />
+          <Route path="/group-profiles" element={<GroupProfileList />} />
+          <Route path="/group-profiles/new" element={<GroupProfileForm />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<ContactPage />} />
