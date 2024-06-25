@@ -53,6 +53,20 @@ const Projects = () => {
   return (
     <div className="p-10 bg-base-200 text-center">
       <section className="mb-10">
+        <h2 className="text-3xl font-bold">Project Showcase</h2>
+        <div className="mt-4">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" title="HUFIDA Project Showcase" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Project Progress and Impact</h2>
+        <div className="mt-4">
+          <img src="/images/infographics/project-progress-infographic.png" alt="HUFIDA Project Progress Infographic" className="w-full h-auto" />
+        </div>
+      </section>
+
+      <section className="mb-10">
         <h2 className="text-3xl font-bold">Current Projects</h2>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {currentProjects.map((project, index) => (

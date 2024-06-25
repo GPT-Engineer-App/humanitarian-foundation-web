@@ -36,7 +36,10 @@ const AboutUs = () => {
       <section className="mb-10">
         <h2 className="text-3xl font-bold">Our Story</h2>
         <p className="mt-4 text-lg">
-          The Humanitarian Foundation for Innovative Development in Africa (HUFIDA) was established to foster sustainable development and innovative solutions that improve the quality of life in African communities. Our purpose is to empower communities through various initiatives that address critical issues such as clean water access, education, healthcare, and economic development.
+          The Humanitarian Foundation for Innovative Development in Africa (HUFIDA) was founded with a vision to transform lives and foster sustainable development in African communities. Our journey began with a simple yet profound mission: to empower communities through innovative solutions that address critical issues such as clean water access, education, healthcare, and economic development.
+        </p>
+        <p className="mt-4 text-lg">
+          Over the years, we have grown into a dynamic organization, driven by a passionate team dedicated to making a tangible impact. Our projects are designed to create lasting change, and we are committed to transparency, accountability, and continuous improvement.
         </p>
       </section>
 
@@ -45,6 +48,20 @@ const AboutUs = () => {
         <p className="mt-4 text-lg">
           Our mission is to empower African communities through sustainable development projects. Our vision is a thriving Africa where every community has access to essential resources and opportunities.
         </p>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Our Mission and Vision</h2>
+        <div className="mt-4">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" title="HUFIDA Mission and Vision" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Our Impact</h2>
+        <div className="mt-4">
+          <img src="/images/infographics/impact-infographic.png" alt="HUFIDA Impact Infographic" className="w-full h-auto" />
+        </div>
       </section>
 
       <section className="mb-10">

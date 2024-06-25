@@ -74,6 +74,20 @@ const GetInvolved = () => {
   return (
     <div className="p-10 bg-base-200 text-center">
       <section className="mb-10">
+        <h2 className="text-3xl font-bold">Get Involved with HUFIDA</h2>
+        <div className="mt-4">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" title="Get Involved with HUFIDA" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Impact of Your Support</h2>
+        <div className="mt-4">
+          <img src="/images/infographics/support-impact-infographic.png" alt="HUFIDA Support Impact Infographic" className="w-full h-auto" />
+        </div>
+      </section>
+
+      <section className="mb-10">
         <h2 className="text-3xl font-bold">Volunteer Opportunities</h2>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {volunteerOpportunities.map((opportunity, index) => (
