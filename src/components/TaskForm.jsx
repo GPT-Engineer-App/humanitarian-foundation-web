@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useSupabaseClient } from '../integrations/supabaseClient';
+import { supabase } from '../integrations/supabase';
 import { supabase } from '../integrations/supabase';
 
 const TaskForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const supabaseClient = useSupabaseClient();
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -13,7 +13,7 @@ const TaskForm = () => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    const { data, error } = await supabaseClient.from('tasks').insert([{ name, description }]);
+    const { data, error } = await supabase.from('tasks').insert([{ name, description }]);
     if (error) {
       console.error('Error creating task:', error);
       setError(error.message);
