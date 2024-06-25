@@ -15,7 +15,6 @@ const communications = [
   },
 ];
 
-# Ensure all img tags include the alt attribute with descriptive text
 const CommunicationTable = () => {
   return (
     <div className="mb-10">
