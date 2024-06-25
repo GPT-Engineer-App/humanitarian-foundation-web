@@ -12,8 +12,8 @@ const UserProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement profile update logic here
-    console.log('Updating profile:', { name, email, bio, profilePicture, privacySettings });
+    // Implement the logic to update the user profile here
+    console.log('Updating user profile:', { name, email, bio, profilePicture, privacySettings });
   };
 
   const handleFileChange = (e) => {

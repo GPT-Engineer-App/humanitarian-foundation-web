@@ -39,7 +39,7 @@ const MilestoneForm = () => {
           required
         ></textarea>
       </div>
-      <button type="submit">Create Milestone</button>
+      <button type="submit">Submit Milestone</button>
     </form>
   );
 };
