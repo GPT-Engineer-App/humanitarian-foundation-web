@@ -43,6 +43,13 @@ const HeroSection = () => {
               >
                 Donate Now
               </motion.button>
+              <motion.button 
+                className="btn btn-accent ml-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Read Our Blog
+              </motion.button>
             </motion.div>
           </div>
         </div>

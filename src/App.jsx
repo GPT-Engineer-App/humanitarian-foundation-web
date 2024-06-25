@@ -11,16 +11,19 @@ import Testimonials from './components/Testimonials';
 import News from './components/News';
 import Footer from './components/Footer';
 import GetInvolved from './components/GetInvolved';
-import Contact from './components/Contact'; // Added import
+import Contact from './components/Contact';
 import ImpactStories from './components/ImpactStories';
 import ProjectShowcase from './components/ProjectShowcase';
 import Transparency from './components/Transparency';
 import DonorRecognition from './components/DonorRecognition';
 import AboutUsPage from './pages/AboutUs';
+import InteractiveQuiz from './components/InteractiveQuiz';
 import ProjectsPage from './pages/Projects';
 import GetInvolvedPage from './pages/GetInvolved';
 import NewsPage from './pages/News';
 import ContactPage from './pages/Contact';
+import PartnersPage from './pages/Partners';
+import BlogPage from './pages/Blog';
 
 function App() {
   return (
@@ -33,16 +36,19 @@ function App() {
         <Route path="/get-involved" element={<GetInvolvedPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/quiz" element={<InteractiveQuiz />} />
       </Routes>
       <MissionStatement />
       <QuickLinks />
       <FeaturedProjects />
-      <Projects /> {/* Added Projects section */}
+      <Projects />
       <AboutUs />
       <GetInvolved />
-      <News /> {/* Added News section */}
+      <News />
       <Testimonials />
-      <Contact /> {/* Added Contact section */}
+      <Contact />
       <ImpactStories />
       <ProjectShowcase />
       <Transparency />

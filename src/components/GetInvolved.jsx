@@ -81,11 +81,11 @@ const GetInvolved = () => {
             </div>
           ))}
         </div>
-        <form className="mt-6">
+        <form className="mt-6 space-y-4">
           <h3 className="text-2xl font-bold">Volunteer Application</h3>
-          <input type="text" placeholder="Name" className="input input-bordered w-full max-w-xs mt-2" />
-          <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs mt-2" />
-          <textarea placeholder="Why do you want to volunteer?" className="textarea textarea-bordered w-full max-w-xs mt-2"></textarea>
+          <input type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" required />
+          <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" required />
+          <textarea placeholder="Why do you want to volunteer?" className="textarea textarea-bordered w-full max-w-xs" required></textarea>
           <button className="btn btn-primary mt-2">Apply</button>
         </form>
       </section>
@@ -118,7 +118,7 @@ const GetInvolved = () => {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-3xl font-bold">Events</h2>
+        <h2 className="text-3xl font-bold">Upcoming Events</h2>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           {upcomingEvents.map((event, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
@@ -126,6 +126,7 @@ const GetInvolved = () => {
                 <h2 className="card-title">{event.title}</h2>
                 <p><strong>Date:</strong> {event.date}</p>
                 <p>{event.description}</p>
+                <button className="btn btn-primary mt-2">Register</button>
               </div>
             </div>
           ))}

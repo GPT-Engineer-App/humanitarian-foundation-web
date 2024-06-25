@@ -27,6 +27,13 @@ const QuickLinks = () => {
         >
           Latest News
         </motion.button>
+        <motion.button 
+          className="btn btn-info transform transition-transform hover:scale-105"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          Take a Quiz
+        </motion.button>
       </div>
     </div>
   );

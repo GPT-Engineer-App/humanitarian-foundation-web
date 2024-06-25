@@ -14,6 +14,8 @@ const NavigationBar = () => {
           <li><Link to="/get-involved">Get Involved</Link></li>
           <li><Link to="/news">News</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/partners">Partners</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
         </ul>
       </div>
     </div>
