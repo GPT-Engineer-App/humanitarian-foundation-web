@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
-import { useSupabase } from '../integrations/supabase';
-import { supabase } from '../integrations/supabase';
+import React, { useState, useEffect } from 'react';
+import { useSupabaseClient } from '../integrations/supabaseClient';
+import { supabase } from '../integrations/supabaseClient';
 
 const TaskForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const { loading, error } = useSupabase();
+  const supabaseClient = useSupabaseClient();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('tasks').insert([{ name, description }]);
-    if (error) console.error('Error creating task:', error);
-    else console.log('Task created:', data);
+    setLoading(true);
+    setError(null);
+    const { data, error } = await supabaseClient.from('tasks').insert([{ name, description }]);
+    if (error) {
+      console.error('Error creating task:', error);
+      setError(error.message);
+    } else {
+      console.log('Task created:', data);
+    }
+    setLoading(false);
   };
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <form onSubmit={handleSubmit}>

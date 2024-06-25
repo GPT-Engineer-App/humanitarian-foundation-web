@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { supabase, useSupabase } from '../integrations/supabase';
 
 const GroupProfileForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const { loading, error } = useSupabase();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,9 +10,6 @@ const GroupProfileForm = () => {
     if (error) console.error('Error creating group profile:', error);
     else console.log('Group profile created:', data);
   };
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <form onSubmit={handleSubmit}>

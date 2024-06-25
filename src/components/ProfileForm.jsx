@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
-import { useSupabase } from '../integrations/supabase';
-import { supabase } from '../integrations/supabase';
 
 const ProfileForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const { loading, error } = useSupabase();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Assuming supabase is defined elsewhere in your project
     const { data, error } = await supabase.from('profiles').insert([{ name, email }]);
     if (error) console.error('Error creating profile:', error);
     else console.log('Profile created:', data);
   };
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <form onSubmit={handleSubmit}>

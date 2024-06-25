@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { supabase, useSupabase } from '../integrations/supabase';
 
 const ResourceForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const { loading, error } = useSupabase();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,9 +10,6 @@ const ResourceForm = () => {
     if (error) console.error('Error creating resource:', error);
     else console.log('Resource created:', data);
   };
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <form onSubmit={handleSubmit}>

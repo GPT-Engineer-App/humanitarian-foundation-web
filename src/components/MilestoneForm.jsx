@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase, useSupabase } from '../integrations/supabase';
 
 const MilestoneForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const { loading, error } = useSupabase();
+  const { loading, error, session } = useSupabase();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('milestones').insert([{ name, description }]);
+    const { data, error } = await supabase.from('milestones').insert([{ name, description, user_id: session.user.id }]);
     if (error) console.error('Error creating milestone:', error);
     else console.log('Milestone created:', data);
   };
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <form onSubmit={handleSubmit}>
