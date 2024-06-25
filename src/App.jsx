@@ -26,6 +26,7 @@ import NewsPage from './pages/News';
 import ContactPage from './pages/Contact';
 import PartnersPage from './pages/Partners';
 import BlogPage from './pages/Blog';
+import Breadcrumb from './components/Breadcrumb';
 
 const TRACKING_ID = "UA-XXXXXXXXX-X"; // Replace with your Google Analytics tracking ID
 
@@ -37,6 +38,7 @@ function App() {
   return (
     <Router>
       <NavigationBar />
+      <Breadcrumb />
       <Routes>
         <Route path="/" element={<HeroSection />} />
         <Route path="/about-us" element={<AboutUsPage />} />
