@@ -22,25 +22,23 @@ function App() {
   return (
     <Router>
       <NavigationBar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/get-involved" element={<GetInvolvedPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-        <MissionStatement />
-        <QuickLinks />
-        <FeaturedProjects />
-        <Projects /> {/* Added Projects section */}
-        <AboutUs />
-        <GetInvolved />
-        <News /> {/* Added News section */}
-        <Testimonials />
-        <Contact /> {/* Added Contact section */}
-      </div>
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/get-involved" element={<GetInvolvedPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      <MissionStatement />
+      <QuickLinks />
+      <FeaturedProjects />
+      <Projects /> {/* Added Projects section */}
+      <AboutUs />
+      <GetInvolved />
+      <News /> {/* Added News section */}
+      <Testimonials />
+      <Contact /> {/* Added Contact section */}
       <Footer />
     </Router>
   );
