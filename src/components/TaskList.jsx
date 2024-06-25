@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSupabase } from '../integrations/supabase';
 import { supabase } from '../integrations/supabase';
 
 const TaskList = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { supabase } from '../integrations/supabase';
+import { supabase, useSupabase } from '../integrations/supabase';
 
 const ResourceList = () => {
   const [resources, setResources] = useState([]);
