@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useSupabase } from '../integrations/supabase';
-import { supabase } from '../integrations/supabase';
+import { useSupabaseClient } from '../integrations/supabaseClient';
+import { supabase } from '../integrations/supabaseClient';
 
 const TaskForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const { loading, error } = useSupabase();
+  const { loading, error } = useSupabaseClient();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
