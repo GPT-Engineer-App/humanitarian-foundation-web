@@ -11,7 +11,11 @@ const partners = [
     description: 'Partner 2 provides essential resources for our projects.',
     logo: '/images/partners/partner2.png',
   },
-  // Add more partners as needed
+  {
+    name: 'Partner 3',
+    description: 'Partner 3 supports our community outreach programs.',
+    logo: '/images/partners/partner3.png',
+  },
 ];
 
 const PartnersPage = () => {
