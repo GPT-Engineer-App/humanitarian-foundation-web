@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Awareness from './pages/Awareness';
 import HeroSection from './components/HeroSection';
 import MissionStatement from './components/MissionStatement';
 import NavigationBar from './components/NavigationBar';
@@ -39,6 +40,7 @@ function App() {
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/quiz" element={<InteractiveQuiz />} />
+        <Route path="/awareness" element={<Awareness />} />
       </Routes>
       <MissionStatement />
       <QuickLinks />
