@@ -7,9 +7,13 @@ const ProfileList = () => {
 
   useEffect(() => {
     const fetchProfiles = async () => {
-      const { data, error } = await supabase.from('profiles').select('*');
-      if (error) console.error('Error fetching profiles:', error);
-      else setProfiles(data);
+      try {
+        const { data, error } = await supabase.from('profiles').select('*');
+        if (error) throw error;
+        setProfiles(data);
+      } catch (error) {
+        console.error('Error fetching profiles:', error.message);
+      }
     };
 
     fetchProfiles();

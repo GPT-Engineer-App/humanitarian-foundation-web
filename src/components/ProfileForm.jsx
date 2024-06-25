@@ -9,9 +9,13 @@ const ProfileForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('profiles').insert([{ name, email }]);
-    if (error) console.error('Error creating profile:', error);
-    else console.log('Profile created:', data);
+    try {
+      const { data, error } = await supabase.from('profiles').insert([{ name, email }]);
+      if (error) throw error;
+      console.log('Profile created:', data);
+    } catch (error) {
+      console.error('Error creating profile:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

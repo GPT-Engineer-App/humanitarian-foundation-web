@@ -8,9 +8,13 @@ const GroupProfileForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('group_profiles').insert([{ name, description }]);
-    if (error) console.error('Error creating group profile:', error);
-    else console.log('Group profile created:', data);
+    try {
+      const { data, error } = await supabase.from('group_profiles').insert([{ name, description }]);
+      if (error) throw error;
+      console.log('Group profile created:', data);
+    } catch (error) {
+      console.error('Error creating group profile:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

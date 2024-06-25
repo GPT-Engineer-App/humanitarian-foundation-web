@@ -7,9 +7,13 @@ const ResourceList = () => {
 
   useEffect(() => {
     const fetchResources = async () => {
-      const { data, error } = await supabase.from('resources').select('*');
-      if (error) console.error('Error fetching resources:', error);
-      else setResources(data);
+      try {
+        const { data, error } = await supabase.from('resources').select('*');
+        if (error) throw error;
+        setResources(data);
+      } catch (error) {
+        console.error('Error fetching resources:', error.message);
+      }
     };
 
     fetchResources();

@@ -7,9 +7,13 @@ const MilestoneList = () => {
 
   useEffect(() => {
     const fetchMilestones = async () => {
-      const { data, error } = await supabase.from('milestones').select('*');
-      if (error) console.error('Error fetching milestones:', error);
-      else setMilestones(data);
+      try {
+        const { data, error } = await supabase.from('milestones').select('*');
+        if (error) throw error;
+        setMilestones(data);
+      } catch (error) {
+        console.error('Error fetching milestones:', error.message);
+      }
     };
 
     fetchMilestones();
