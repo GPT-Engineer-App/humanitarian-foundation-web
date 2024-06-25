@@ -36,7 +36,7 @@ const AboutUs = () => {
       <section className="mb-10">
         <h2 className="text-3xl font-bold">Our Story</h2>
         <p className="mt-4 text-lg">
-          The Humanitarian Foundation for Innovative Development in Africa (HUFIDA) was established to foster sustainable development and innovative solutions that improve the quality of life in African communities.
+          The Humanitarian Foundation for Innovative Development in Africa (HUFIDA) was established to foster sustainable development and innovative solutions that improve the quality of life in African communities. Our purpose is to empower communities through various initiatives that address critical issues such as clean water access, education, healthcare, and economic development.
         </p>
       </section>
 

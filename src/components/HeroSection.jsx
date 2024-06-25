@@ -28,13 +28,20 @@ const HeroSection = () => {
               transition={{ duration: 1 }}
             >
               <h1 className="mb-5 text-5xl font-bold">Empowering Africa's Future</h1>
-              <p className="mb-5">Join us in making a difference through innovative development projects.</p>
+              <p className="mb-5">Join us in fostering sustainable development and innovative solutions that improve the quality of life in African communities.</p>
               <motion.button 
                 className="btn btn-primary"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 Get Involved
+              </motion.button>
+              <motion.button 
+                className="btn btn-secondary ml-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Donate Now
               </motion.button>
             </motion.div>
           </div>
