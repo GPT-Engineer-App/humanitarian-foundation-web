@@ -12,6 +12,10 @@ import News from './components/News';
 import Footer from './components/Footer';
 import GetInvolved from './components/GetInvolved';
 import Contact from './components/Contact'; // Added import
+import ImpactStories from './components/ImpactStories';
+import ProjectShowcase from './components/ProjectShowcase';
+import Transparency from './components/Transparency';
+import DonorRecognition from './components/DonorRecognition';
 import AboutUsPage from './pages/AboutUs';
 import ProjectsPage from './pages/Projects';
 import GetInvolvedPage from './pages/GetInvolved';
@@ -39,6 +43,10 @@ function App() {
       <News /> {/* Added News section */}
       <Testimonials />
       <Contact /> {/* Added Contact section */}
+      <ImpactStories />
+      <ProjectShowcase />
+      <Transparency />
+      <DonorRecognition />
       <Footer />
     </Router>
   );
