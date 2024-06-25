@@ -8,9 +8,13 @@ const ResourceForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('resources').insert([{ name, description }]);
-    if (error) console.error('Error creating resource:', error);
-    else console.log('Resource created:', data);
+    try {
+      const { data, error } = await supabase.from('resources').insert([{ name, description }]);
+      if (error) throw error;
+      console.log('Resource created:', data);
+    } catch (error) {
+      console.error('Error creating resource:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

@@ -17,6 +17,7 @@ export const useSupabase = () => {
         if (error) throw error;
         setLoading(false);
       } catch (error) {
+        console.error('Error fetching data:', error.message);
         setError(error.message);
         setLoading(false);
       }

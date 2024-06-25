@@ -9,9 +9,13 @@ const TaskForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('tasks').insert([{ name, description }]);
-    if (error) console.error('Error creating task:', error);
-    else console.log('Task created:', data);
+    try {
+      const { data, error } = await supabase.from('tasks').insert([{ name, description }]);
+      if (error) throw error;
+      console.log('Task created:', data);
+    } catch (error) {
+      console.error('Error creating task:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

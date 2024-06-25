@@ -8,9 +8,13 @@ const MilestoneForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('milestones').insert([{ name, description }]);
-    if (error) console.error('Error creating milestone:', error);
-    else console.log('Milestone created:', data);
+    try {
+      const { data, error } = await supabase.from('milestones').insert([{ name, description }]);
+      if (error) throw error;
+      console.log('Milestone created:', data);
+    } catch (error) {
+      console.error('Error creating milestone:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

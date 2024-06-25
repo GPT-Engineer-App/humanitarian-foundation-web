@@ -7,9 +7,13 @@ const GroupProfileList = () => {
 
   useEffect(() => {
     const fetchGroupProfiles = async () => {
-      const { data, error } = await supabase.from('group_profiles').select('*');
-      if (error) console.error('Error fetching group profiles:', error);
-      else setGroupProfiles(data);
+      try {
+        const { data, error } = await supabase.from('group_profiles').select('*');
+        if (error) throw error;
+        setGroupProfiles(data);
+      } catch (error) {
+        console.error('Error fetching group profiles:', error.message);
+      }
     };
 
     fetchGroupProfiles();

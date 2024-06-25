@@ -8,9 +8,13 @@ const TaskList = () => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const { data, error } = await supabase.from('tasks').select('*');
-      if (error) console.error('Error fetching tasks:', error);
-      else setTasks(data);
+      try {
+        const { data, error } = await supabase.from('tasks').select('*');
+        if (error) throw error;
+        setTasks(data);
+      } catch (error) {
+        console.error('Error fetching tasks:', error.message);
+      }
     };
 
     fetchTasks();

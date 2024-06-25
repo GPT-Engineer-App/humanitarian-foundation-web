@@ -9,9 +9,13 @@ const ProjectForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('projects').insert([{ name, description }]);
-    if (error) console.error('Error creating project:', error);
-    else console.log('Project created:', data);
+    try {
+      const { data, error } = await supabase.from('projects').insert([{ name, description }]);
+      if (error) throw error;
+      console.log('Project created:', data);
+    } catch (error) {
+      console.error('Error creating project:', error.message);
+    }
   };
 
   if (loading) return <div>Loading...</div>;

@@ -7,9 +7,13 @@ const ProjectList = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const { data, error } = await supabase.from('projects').select('*');
-      if (error) console.error('Error fetching projects:', error);
-      else setProjects(data);
+      try {
+        const { data, error } = await supabase.from('projects').select('*');
+        if (error) throw error;
+        setProjects(data);
+      } catch (error) {
+        console.error('Error fetching projects:', error.message);
+      }
     };
 
     fetchProjects();
