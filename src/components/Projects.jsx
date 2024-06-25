@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { FaStar } from 'react-icons/fa';
+import ProjectTable from './ProjectTable';
+import TaskTable from './TaskTable';
+import TeamMemberTable from './TeamMemberTable';
+import MilestoneTable from './MilestoneTable';
+import ResourceTable from './ResourceTable';
+import CommunicationTable from './CommunicationTable';
 
 const currentProjects = [
   {
@@ -12,25 +17,6 @@ const currentProjects = [
     involvement: 'You can help by donating or volunteering for our water testing and distribution events.',
     image: '/images/project1.jpg',
     position: [1.2921, 36.8219], // Nairobi, Kenya
-    tasks: [
-      'Survey water sources',
-      'Install water filtration systems',
-      'Conduct water quality tests'
-    ],
-    team: [
-      { name: 'John Doe', role: 'Project Manager' },
-      { name: 'Jane Smith', role: 'Field Coordinator' }
-    ],
-    milestones: [
-      { milestone: 'Survey completed', date: '2023-01-15' },
-      { milestone: 'Filtration systems installed', date: '2023-03-10' }
-    ],
-    resources: 'Budget: $50,000, Volunteers: 20',
-    communications: [
-      { date: '2023-01-10', message: 'Initial project meeting' },
-      { date: '2023-02-05', message: 'Mid-project review' }
-    ],
-    votes: 0
   },
   {
     title: 'Educational Programs',
@@ -40,25 +26,6 @@ const currentProjects = [
     involvement: 'Join us as a volunteer teacher or donate educational materials.',
     image: '/images/project2.jpg',
     position: [0.3476, 32.5825], // Kampala, Uganda
-    tasks: [
-      'Construct school buildings',
-      'Distribute educational materials',
-      'Train teachers'
-    ],
-    team: [
-      { name: 'Alice Johnson', role: 'Project Manager' },
-      { name: 'Bob Brown', role: 'Education Specialist' }
-    ],
-    milestones: [
-      { milestone: 'First school completed', date: '2023-02-20' },
-      { milestone: 'Materials distributed', date: '2023-04-15' }
-    ],
-    resources: 'Budget: $30,000, Volunteers: 15',
-    communications: [
-      { date: '2023-01-20', message: 'Project kickoff' },
-      { date: '2023-03-01', message: 'Progress update meeting' }
-    ],
-    votes: 0
   },
   {
     title: 'Healthcare Services',
@@ -68,26 +35,7 @@ const currentProjects = [
     involvement: 'Support us by donating medical supplies or funds for renovation.',
     image: '/images/project3.jpg',
     position: [-1.2921, 36.8219], // Nairobi, Kenya
-    tasks: [
-      'Renovate healthcare centers',
-      'Procure medical supplies',
-      'Train healthcare workers'
-    ],
-    team: [
-      { name: 'Charlie Davis', role: 'Project Manager' },
-      { name: 'Dana Lee', role: 'Healthcare Specialist' }
-    ],
-    milestones: [
-      { milestone: 'First center renovated', date: '2023-01-30' },
-      { milestone: 'Supplies procured', date: '2023-03-25' }
-    ],
-    resources: 'Budget: $40,000, Volunteers: 10',
-    communications: [
-      { date: '2023-01-05', message: 'Initial planning meeting' },
-      { date: '2023-02-15', message: 'Mid-project review' }
-    ],
-    votes: 0
-  }
+  },
 ];
 
 const pastProjects = [
@@ -108,14 +56,6 @@ const pastProjects = [
 ];
 
 const Projects = () => {
-  const [projects, setProjects] = useState(currentProjects);
-
-  const handleVote = (index, value) => {
-    const updatedProjects = [...projects];
-    updatedProjects[index].votes = value;
-    setProjects(updatedProjects);
-  };
-
   return (
     <div className="p-10 bg-base-200 text-center">
       <section className="mb-10">
@@ -135,7 +75,7 @@ const Projects = () => {
       <section className="mb-10">
         <h2 className="text-3xl font-bold">Current Projects</h2>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {projects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
               <figure><img src={project.image} alt={project.title} /></figure>
               <div className="card-body">
@@ -144,47 +84,6 @@ const Projects = () => {
                 <p><strong>Goals:</strong> {project.goals}</p>
                 <p><strong>Progress:</strong> {project.progress}</p>
                 <p><strong>Get Involved:</strong> {project.involvement}</p>
-                <p><strong>Tasks:</strong></p>
-                <ul>
-                  {project.tasks.map((task, taskIndex) => (
-                    <li key={taskIndex}>{task}</li>
-                  ))}
-                </ul>
-                <p><strong>Team Members:</strong></p>
-                <ul>
-                  {project.team.map((member, memberIndex) => (
-                    <li key={memberIndex}>{member.name} - {member.role}</li>
-                  ))}
-                </ul>
-                <p><strong>Milestones:</strong></p>
-                <ul>
-                  {project.milestones.map((milestone, milestoneIndex) => (
-                    <li key={milestoneIndex}>{milestone.milestone} - {milestone.date}</li>
-                  ))}
-                </ul>
-                <p><strong>Resources:</strong> {project.resources}</p>
-                <p><strong>Communications:</strong></p>
-                <ul>
-                  {project.communications.map((communication, communicationIndex) => (
-                    <li key={communicationIndex}>{communication.date} - {communication.message}</li>
-                  ))}
-                </ul>
-                <div className="mt-4">
-                  <label className="block mb-2">Vote on this project:</label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={project.votes}
-                    onChange={(e) => handleVote(index, e.target.value)}
-                    className="range range-primary"
-                  />
-                  <div className="flex justify-between text-xs px-2">
-                    <span>0</span>
-                    <span>100</span>
-                  </div>
-                  <p className="mt-2">Votes: {project.votes}</p>
-                </div>
               </div>
             </div>
           ))}
@@ -226,6 +125,16 @@ const Projects = () => {
             ))}
           </MapContainer>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Project Management</h2>
+        <ProjectTable />
+        <TaskTable />
+        <TeamMemberTable />
+        <MilestoneTable />
+        <ResourceTable />
+        <CommunicationTable />
       </section>
     </div>
   );
