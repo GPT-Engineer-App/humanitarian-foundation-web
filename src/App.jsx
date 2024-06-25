@@ -6,6 +6,7 @@ import NavigationBar from './components/NavigationBar';
 import Breadcrumb from './components/Breadcrumb';
 import Footer from './components/Footer';
 import Loading from './components/Loading'; // New loading component
+import ProjectManagement from './pages/ProjectManagement';
 
 const HeroSection = lazy(() => import('./components/HeroSection'));
 const MissionStatement = lazy(() => import('./components/MissionStatement'));
@@ -62,6 +63,7 @@ function App() {
             <Route path="/advanced-search" element={<AdvancedSearch />} />
             <Route path="/user-profile" element={<UserProfile />} />
             <Route path="/user-dashboard" element={<UserDashboard />} />
+            <Route path="/project-management" element={<ProjectManagement />} />
           </Routes>
           <MissionStatement />
           <QuickLinks />
