@@ -31,6 +31,7 @@ const BlogPage = lazy(() => import('./pages/Blog'));
 const AdvancedSearch = lazy(() => import('./components/AdvancedSearch'));
 const UserProfile = lazy(() => import('./components/UserProfile'));
 const UserDashboard = lazy(() => import('./components/UserDashboard'));
+const GetInvolved = lazy(() => import('./components/GetInvolved'));
 
 const TRACKING_ID = "UA-XXXXXXXXX-X"; // Replace with your Google Analytics tracking ID
 
