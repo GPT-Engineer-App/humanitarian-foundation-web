@@ -286,3 +286,69 @@ export const useDeleteProject = () => {
         },
     });
 };
+
+// Hooks for communications_table
+export const useCommunicationsTable = () => useQuery({
+    queryKey: ['communications_table'],
+    queryFn: () => fromSupabase(supabase.from('communications_table').select('*')),
+});
+export const useAddCommunication = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (newCommunication) => fromSupabase(supabase.from('communications_table').insert([newCommunication])),
+        onSuccess: () => {
+            queryClient.invalidateQueries('communications_table');
+        },
+    });
+};
+export const useUpdateCommunication = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (updatedCommunication) => fromSupabase(supabase.from('communications_table').update(updatedCommunication).eq('id', updatedCommunication.id)),
+        onSuccess: () => {
+            queryClient.invalidateQueries('communications_table');
+        },
+    });
+};
+export const useDeleteCommunication = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (id) => fromSupabase(supabase.from('communications_table').delete().eq('id', id)),
+        onSuccess: () => {
+            queryClient.invalidateQueries('communications_table');
+        },
+    });
+};
+
+// Hooks for team_members_table
+export const useTeamMembersTable = () => useQuery({
+    queryKey: ['team_members_table'],
+    queryFn: () => fromSupabase(supabase.from('team_members_table').select('*')),
+});
+export const useAddTeamMember = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (newTeamMember) => fromSupabase(supabase.from('team_members_table').insert([newTeamMember])),
+        onSuccess: () => {
+            queryClient.invalidateQueries('team_members_table');
+        },
+    });
+};
+export const useUpdateTeamMember = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (updatedTeamMember) => fromSupabase(supabase.from('team_members_table').update(updatedTeamMember).eq('id', updatedTeamMember.id)),
+        onSuccess: () => {
+            queryClient.invalidateQueries('team_members_table');
+        },
+    });
+};
+export const useDeleteTeamMember = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: (id) => fromSupabase(supabase.from('team_members_table').delete().eq('id', id)),
+        onSuccess: () => {
+            queryClient.invalidateQueries('team_members_table');
+        },
+    });
+};
