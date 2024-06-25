@@ -51,6 +51,7 @@ const UserProfile = () => {
             type="file"
             onChange={handleFileChange}
             className="file-input file-input-bordered w-full"
+            alt="Upload your profile picture"
           />
         </div>
         <div>

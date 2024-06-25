@@ -19,6 +19,7 @@ const MilestoneTable = () => {
   return (
     <div className="mb-10">
       <h3 className="text-2xl font-bold mb-4">Milestones</h3>
+      <img src="milestone-image.jpg" alt="Milestone illustration" className="mb-4" />
       <table className="table-auto w-full">
         <thead>
           <tr>

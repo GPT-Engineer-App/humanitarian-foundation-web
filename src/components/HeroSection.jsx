@@ -18,7 +18,7 @@ const HeroSection = () => {
   return (
     <div className="hero min-h-screen">
       <Slider {...settings}>
-        <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }}>
+        <div className="hero-slide" style={{ backgroundImage: 'url(/images/hero-banner.jpg)' }} alt="Hero Banner">
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <motion.div 
@@ -53,7 +53,7 @@ const HeroSection = () => {
             </motion.div>
           </div>
         </div>
-        <div className="hero-slide" style={{ backgroundImage: 'url(/images/another-banner.jpg)' }}>
+        <div className="hero-slide" style={{ backgroundImage: 'url(/images/another-banner.jpg)' }} alt="Another Banner">
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <motion.div 

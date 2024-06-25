@@ -5,9 +5,13 @@ const teamMembers = [
     name: 'John Doe',
     role: 'Project Manager',
     contact: 'john.doe@example.com',
+    image: 'path/to/john-image.jpg',
+    alt: 'John Doe, Project Manager',
   },
   {
     name: 'Jane Smith',
+    image: 'path/to/jane-image.jpg',
+    alt: 'Jane Smith, Operations Coordinator',
     role: 'Operations Coordinator',
     contact: 'jane.smith@example.com',
   },
@@ -28,7 +32,10 @@ const TeamMemberTable = () => {
         <tbody>
           {teamMembers.map((member, index) => (
             <tr key={index}>
-              <td className="border px-4 py-2">{member.name}</td>
+              <td className="border px-4 py-2">
+                <img src={member.image} alt={member.alt} className="inline-block mr-2" />
+                {member.name}
+              </td>
               <td className="border px-4 py-2">{member.role}</td>
               <td className="border px-4 py-2">{member.contact}</td>
             </tr>

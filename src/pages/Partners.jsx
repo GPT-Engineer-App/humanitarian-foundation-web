@@ -5,11 +5,13 @@ const partners = [
     name: 'Partner 1',
     description: 'Partner 1 has been a key supporter of HUFIDA’s initiatives.',
     logo: '/images/partners/partner1.png',
+    alt: 'Partner 1 Logo',
   },
   {
     name: 'Partner 2',
     description: 'Partner 2 provides essential resources for our projects.',
     logo: '/images/partners/partner2.png',
+    alt: 'Partner 2 Logo',
   },
   // Add more partners as needed
 ];
@@ -21,7 +23,7 @@ const PartnersPage = () => {
       <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {partners.map((partner, index) => (
           <div key={index} className="card bg-base-100 shadow-xl">
-            <figure><img src={partner.logo} alt={partner.name} /></figure>
+            <figure><img src={partner.logo} alt={partner.alt} /></figure>
             <div className="card-body">
               <h2 className="card-title">{partner.name}</h2>
               <p>{partner.description}</p>

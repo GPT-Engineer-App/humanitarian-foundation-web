@@ -5,6 +5,7 @@ const Breadcrumb = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
 
+  // Ensure all img tags include the alt attribute with descriptive text
   return (
     <nav className="text-sm breadcrumbs p-4" aria-label="Breadcrumb">
       <ul>

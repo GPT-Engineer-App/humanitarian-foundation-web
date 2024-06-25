@@ -6,6 +6,7 @@ const projects = [
     description: 'Providing access to clean and safe drinking water in rural areas.',
     progress: 'Completed',
     image: '/images/project1.jpg',
+    alt: 'Clean Water Initiative Project',
     video: 'https://www.youtube.com/embed/example1',
   },
   {
@@ -13,6 +14,7 @@ const projects = [
     description: 'Empowering children through education and skill development.',
     progress: 'Ongoing',
     image: '/images/project2.jpg',
+    alt: 'Educational Programs Project',
     video: 'https://www.youtube.com/embed/example2',
   },
   // Add more projects as needed
@@ -25,7 +27,7 @@ const ProjectShowcase = () => {
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, index) => (
           <div key={index} className="card bg-base-100 shadow-xl">
-            <figure><img src={project.image} alt={project.title} /></figure>
+            <figure><img src={project.image} alt={project.alt} /></figure>
             <div className="card-body">
               <h2 className="card-title">{project.title}</h2>
               <p>{project.description}</p>
