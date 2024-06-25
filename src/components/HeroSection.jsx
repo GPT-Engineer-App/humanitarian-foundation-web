@@ -15,6 +15,17 @@ const HeroSection = () => {
     autoplaySpeed: 3000,
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 1, ease: 'easeInOut' }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    animate: { transition: { staggerChildren: 0.3 } }
+  };
+
   return (
     <div className="hero min-h-screen">
       <Slider {...settings}>
@@ -23,33 +34,35 @@ const HeroSection = () => {
           <div className="hero-content text-center text-neutral-content">
             <motion.div 
               className="max-w-md"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
             >
-              <h1 className="mb-5 text-5xl font-bold">Empowering Africa's Future</h1>
-              <p className="mb-5">Join us in our mission to create sustainable development and innovative solutions that improve the quality of life in African communities.</p>
-              <motion.button 
-                className="btn btn-primary"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Get Involved
-              </motion.button>
-              <motion.button 
-                className="btn btn-secondary ml-4"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Donate Now
-              </motion.button>
-              <motion.button 
-                className="btn btn-accent ml-4"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Read Our Blog
-              </motion.button>
+              <motion.h1 className="mb-5 text-5xl font-bold" variants={fadeInUp}>Empowering Africa's Future</motion.h1>
+              <motion.p className="mb-5" variants={fadeInUp}>Join us in our mission to create sustainable development and innovative solutions that improve the quality of life in African communities.</motion.p>
+              <motion.div className="flex justify-center space-x-4" variants={fadeInUp}>
+                <motion.button 
+                  className="btn btn-primary"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Get Involved
+                </motion.button>
+                <motion.button 
+                  className="btn btn-secondary"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Donate Now
+                </motion.button>
+                <motion.button 
+                  className="btn btn-accent"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Read Our Blog
+                </motion.button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -58,16 +71,17 @@ const HeroSection = () => {
           <div className="hero-content text-center text-neutral-content">
             <motion.div 
               className="max-w-md"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
             >
-              <h1 className="mb-5 text-5xl font-bold">Innovative Solutions</h1>
-              <p className="mb-5">Creating sustainable solutions for African communities.</p>
+              <motion.h1 className="mb-5 text-5xl font-bold" variants={fadeInUp}>Innovative Solutions</motion.h1>
+              <motion.p className="mb-5" variants={fadeInUp}>Creating sustainable solutions for African communities.</motion.p>
               <motion.button 
                 className="btn btn-primary"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                variants={fadeInUp}
               >
                 Learn More
               </motion.button>
