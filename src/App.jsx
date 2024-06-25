@@ -27,6 +27,9 @@ import ContactPage from './pages/Contact';
 import PartnersPage from './pages/Partners';
 import BlogPage from './pages/Blog';
 import Breadcrumb from './components/Breadcrumb';
+import AdvancedSearch from './components/AdvancedSearch';
+import UserProfile from './components/UserProfile';
+import UserDashboard from './components/UserDashboard';
 
 const TRACKING_ID = "UA-XXXXXXXXX-X"; // Replace with your Google Analytics tracking ID
 
@@ -50,6 +53,9 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/quiz" element={<InteractiveQuiz />} />
         <Route path="/awareness" element={<Awareness />} />
+        <Route path="/advanced-search" element={<AdvancedSearch />} />
+        <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
       </Routes>
       <MissionStatement />
       <QuickLinks />
