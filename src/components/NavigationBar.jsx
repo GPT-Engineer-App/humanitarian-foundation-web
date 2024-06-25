@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { logPageView } from '../utils/analytics';
 import { FaChevronDown } from 'react-icons/fa';
+import AutocompleteSearch from './AutocompleteSearch';
 
 const NavigationBar = () => {
   const location = useLocation();
@@ -17,6 +17,9 @@ const NavigationBar = () => {
     <nav className="navbar bg-base-100">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost normal-case text-xl">HUFIDA</Link>
+        <div className="ml-4 w-1/3">
+          <AutocompleteSearch />
+        </div>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
