@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const UserProfile = () => {
   const [name, setName] = useState('');
@@ -10,38 +10,10 @@ const UserProfile = () => {
     showBio: true,
   });
 
-  useEffect(() => {
-    // Fetch user data from API and set initial state
-    const fetchUserData = async () => {
-      const response = await fetch('/api/user');
-      const data = await response.json();
-      setName(data.name);
-      setEmail(data.email);
-      setBio(data.bio);
-      setProfilePicture(data.profilePicture);
-      setPrivacySettings(data.privacySettings);
-    };
-
-    fetchUserData();
-  }, []);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Implement profile update logic here
-    const updatedProfile = { name, email, bio, profilePicture, privacySettings };
-    const response = await fetch('/api/user', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedProfile),
-    });
-
-    if (response.ok) {
-      console.log('Profile updated successfully');
-    } else {
-      console.error('Failed to update profile');
-    }
+    console.log('Updating profile:', { name, email, bio, profilePicture, privacySettings });
   };
 
   const handleFileChange = (e) => {
