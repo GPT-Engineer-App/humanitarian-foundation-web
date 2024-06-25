@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 const volunteerOpportunities = [
   {
     title: 'Community Outreach',
-    description: 'Engage with local communities to spread awareness about our projects and initiatives.',
+    description: 'Engage with local communities to spread awareness about our projects and initiatives. Volunteers will participate in door-to-door campaigns, distribute flyers, and engage in community discussions.',
   },
   {
     title: 'Event Planning',
-    description: 'Help organize and execute our events to ensure they run smoothly.',
+    description: 'Help organize and execute our events to ensure they run smoothly. Volunteers will assist with logistics, guest coordination, and on-the-day event management.',
   },
   {
     title: 'Fundraising',
-    description: 'Assist in planning and executing fundraising campaigns.',
+    description: 'Assist in planning and executing fundraising campaigns. Volunteers will help with campaign strategy, donor outreach, and event coordination.',
+  },
+  {
+    title: 'Social Media Management',
+    description: 'Manage our social media accounts to increase engagement and awareness. Volunteers will create content, schedule posts, and interact with followers.',
   },
 ];
 
@@ -88,6 +92,17 @@ const GetInvolved = () => {
           <textarea placeholder="Why do you want to volunteer?" className="textarea textarea-bordered w-full max-w-xs" required></textarea>
           <button className="btn btn-primary mt-2">Apply</button>
         </form>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Volunteer Testimonials</h3>
+          <div className="mt-4">
+            <blockquote className="p-4 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 quote">
+              "Volunteering here has been a life-changing experience. I've met so many wonderful people and learned so much." - Jane Doe
+            </blockquote>
+            <blockquote className="p-4 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 quote mt-4">
+              "Being a part of this community has given me a sense of purpose and fulfillment." - John Smith
+            </blockquote>
+          </div>
+        </div>
       </section>
 
       <section className="mb-10">
@@ -103,6 +118,16 @@ const GetInvolved = () => {
             </div>
           ))}
         </div>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Impact of Your Donations</h3>
+          <p className="mt-4">Your donations have helped us achieve remarkable milestones:</p>
+          <ul className="list-disc list-inside mt-4">
+            <li>Provided clean water to over 1,000 families.</li>
+            <li>Funded education for 500 children.</li>
+            <li>Supported healthcare services in 20 communities.</li>
+          </ul>
+          <p className="mt-4">Read more about our success stories and the impact of your contributions on our <a href="/impact" className="text-blue-500">Impact Page</a>.</p>
+        </div>
       </section>
 
       <section className="mb-10">
@@ -114,6 +139,17 @@ const GetInvolved = () => {
               <li key={index}>{tip}</li>
             ))}
           </ul>
+        </div>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Success Stories</h3>
+          <div className="mt-4">
+            <p>Our fundraising efforts have led to numerous success stories:</p>
+            <ul className="list-disc list-inside mt-4">
+              <li>Raised $50,000 for disaster relief in 2022.</li>
+              <li>Funded the construction of a new community center.</li>
+              <li>Supported the education of 200 children through scholarships.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -130,6 +166,30 @@ const GetInvolved = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Our Partners</h3>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="card bg-base-100 shadow-xl">
+              <div className="card-body">
+                <img src="/images/partner1.png" alt="Partner 1" className="w-full h-32 object-contain" />
+                <p className="mt-2">Partner 1 has been instrumental in supporting our community outreach programs.</p>
+              </div>
+            </div>
+            <div className="card bg-base-100 shadow-xl">
+              <div className="card-body">
+                <img src="/images/partner2.png" alt="Partner 2" className="w-full h-32 object-contain" />
+                <p className="mt-2">Partner 2 has provided significant funding for our healthcare initiatives.</p>
+              </div>
+            </div>
+            <div className="card bg-base-100 shadow-xl">
+              <div className="card-body">
+                <img src="/images/partner3.png" alt="Partner 3" className="w-full h-32 object-contain" />
+                <p className="mt-2">Partner 3 has collaborated with us on various educational projects.</p>
+              </div>
+            </div>
+          </div>
+          <p className="mt-4">Interested in becoming a partner or sponsor? <a href="/partnerships" className="text-blue-500">Learn more</a>.</p>
         </div>
       </section>
 
@@ -195,6 +255,17 @@ const GetInvolved = () => {
           </div>
           <button type="submit" className="btn btn-primary">Donate</button>
         </form>
+        <div className="mt-6">
+          <h3 className="text-2xl font-bold">Donation Stories</h3>
+          <div className="mt-4">
+            <p>Read about how your donations have made a difference:</p>
+            <ul className="list-disc list-inside mt-4">
+              <li>John's Story: How a small donation changed his life.</li>
+              <li>Community Impact: Building a new school with your help.</li>
+              <li>Healthcare Heroes: Providing essential medical supplies.</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   );
