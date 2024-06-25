@@ -1,6 +1,12 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import ProjectTable from './ProjectTable';
+import TaskTable from './TaskTable';
+import TeamMemberTable from './TeamMemberTable';
+import MilestoneTable from './MilestoneTable';
+import ResourceTable from './ResourceTable';
+import CommunicationTable from './CommunicationTable';
 
 const currentProjects = [
   {
@@ -119,6 +125,16 @@ const Projects = () => {
             ))}
           </MapContainer>
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Project Management</h2>
+        <ProjectTable />
+        <TaskTable />
+        <TeamMemberTable />
+        <MilestoneTable />
+        <ResourceTable />
+        <CommunicationTable />
       </section>
     </div>
   );
