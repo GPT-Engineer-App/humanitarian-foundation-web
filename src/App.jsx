@@ -62,7 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<div className="parallax" style={{backgroundImage: "url('/images/hero-banner.jpg')"}}><HeroSection /></div>} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/projects" element={<ProjectList />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/new" element={<ProjectForm />} />
           <Route path="/tasks" element={<TaskList />} />
           <Route path="/tasks/new" element={<TaskForm />} />
