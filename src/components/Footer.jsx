@@ -12,15 +12,9 @@ const Footer = () => {
       <div>
         <span className="footer-title">Follow Us</span>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="facebook-icon.png" alt="Facebook icon" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="twitter-icon.png" alt="Twitter icon" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="instagram-icon.png" alt="Instagram icon" />
-          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
       <div>

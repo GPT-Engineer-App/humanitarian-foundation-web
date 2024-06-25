@@ -22,8 +22,6 @@ const DonorRecognition = () => {
             <div className="card-body">
               <h2 className="card-title">{donor.name}</h2>
               <p>{donor.message}</p>
-              {/* If an image is added, ensure to include an alt attribute with descriptive text */}
-              {/* Example: <img src="path/to/image.jpg" alt="Descriptive text about the image" /> */}
             </div>
           </div>
         ))}

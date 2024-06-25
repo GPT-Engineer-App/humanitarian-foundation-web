@@ -8,7 +8,6 @@ const blogPosts = [
     excerpt: 'Learn how HUFIDA is providing access to clean and safe drinking water in rural areas.',
     content: 'Full content about how HUFIDA is providing access to clean and safe drinking water in rural areas. This includes detailed information about the projects, the impact on the communities, and future plans.',
     image: '/images/blog1.jpg',
-    imageAlt: 'Empowering Communities through Clean Water Blog Post',
     rating: 4.5,
   },
   {
@@ -17,7 +16,6 @@ const blogPosts = [
     excerpt: 'Our educational programs are empowering children through education and skill development.',
     content: 'Full content about our educational programs, including success stories, detailed descriptions of the programs, and the impact on the children and communities.',
     image: '/images/blog2.jpg',
-    imageAlt: 'Educational Programs Making a Difference Blog Post',
     rating: 4.0,
   },
   {
@@ -26,7 +24,6 @@ const blogPosts = [
     excerpt: 'A step-by-step guide to building a low-cost solar water heater using locally available materials.',
     content: 'Full step-by-step guide to building a low-cost solar water heater, including materials needed, instructions, and tips for success.',
     image: '/images/blog3.jpg',
-    imageAlt: 'DIY Solar Water Heater Blog Post',
     rating: 5.0,
   },
   {
@@ -35,7 +32,6 @@ const blogPosts = [
     excerpt: 'Learn how to start composting at home with simple and effective methods.',
     content: 'Full guide on how to start composting at home, including benefits, methods, and tips for success.',
     image: '/images/blog4.jpg',
-    imageAlt: 'Composting for Beginners Blog Post',
     rating: 4.8,
   },
 ];
@@ -60,13 +56,11 @@ const mediaGallery = [
     title: 'Community Outreach Event',
     type: 'photo',
     url: '/images/gallery1.jpg',
-    imageAlt: 'Community Outreach Event Photo',
   },
   {
     title: 'Healthcare Initiative Launch',
     type: 'video',
     url: 'https://www.youtube.com/embed/example',
-    imageAlt: 'Healthcare Initiative Launch Video',
   },
 ];
 
@@ -132,7 +126,7 @@ const News = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           {sortedBlogPosts.map((post, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
-              <figure><img src={post.image} alt={post.imageAlt} /></figure>
+              <figure><img src={post.image} alt={post.title} /></figure>
               <div className="card-body">
                 <h2 className="card-title">{post.title}</h2>
                 <p className="text-sm text-gray-500">{post.date}</p>
@@ -180,7 +174,7 @@ const News = () => {
           {mediaGallery.map((media, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
               {media.type === 'photo' ? (
-                <figure><img src={media.url} alt={media.imageAlt} /></figure>
+                <figure><img src={media.url} alt={media.title} /></figure>
               ) : (
                 <div className="card-body">
                   <h2 className="card-title">{media.title}</h2>

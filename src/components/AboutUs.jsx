@@ -6,14 +6,12 @@ const teamMembers = [
     role: 'Founder & CEO',
     bio: 'John has over 20 years of experience in humanitarian work and founded HUFIDA to make a difference in African communities.',
     image: '/images/team/john_doe.jpg',
-    alt: 'John Doe - Founder & CEO',
   },
   {
     name: 'Jane Smith',
     role: 'Chief Operations Officer',
     bio: 'Jane oversees all operations at HUFIDA and ensures that our projects are executed efficiently.',
     image: '/images/team/jane_smith.jpg',
-    alt: 'Jane Smith - Chief Operations Officer',
   },
   // Add more team members as needed
 ];
@@ -23,13 +21,11 @@ const partners = [
     name: 'Partner 1',
     description: 'Partner 1 has been a key supporter of HUFIDA’s initiatives.',
     logo: '/images/partners/partner1.png',
-    alt: 'Partner 1 Logo',
   },
   {
     name: 'Partner 2',
     description: 'Partner 2 provides essential resources for our projects.',
     logo: '/images/partners/partner2.png',
-    alt: 'Partner 2 Logo',
   },
   // Add more partners as needed
 ];
@@ -73,7 +69,7 @@ const AboutUs = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {teamMembers.map((member, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
-              <figure><img src={member.image} alt={member.alt} /></figure>
+              <figure><img src={member.image} alt={member.name} /></figure>
               <div className="card-body">
                 <h2 className="card-title">{member.name}</h2>
                 <p className="font-bold">{member.role}</p>
@@ -89,7 +85,7 @@ const AboutUs = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {partners.map((partner, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
-              <figure><img src={partner.logo} alt={partner.alt} /></figure>
+              <figure><img src={partner.logo} alt={partner.name} /></figure>
               <div className="card-body">
                 <h2 className="card-title">{partner.name}</h2>
                 <p>{partner.description}</p>

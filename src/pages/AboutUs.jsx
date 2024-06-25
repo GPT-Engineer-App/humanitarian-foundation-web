@@ -5,7 +5,6 @@ const AboutUsPage = () => {
   return (
     <div>
       <AboutUs />
-      <img src="path/to/image.jpg" alt="Descriptive text about the image" />
     </div>
   );
 };

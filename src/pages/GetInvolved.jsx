@@ -5,7 +5,6 @@ const GetInvolvedPage = () => {
   return (
     <div>
       <GetInvolved />
-      <img src="path/to/image.jpg" alt="Descriptive text for the image" />
     </div>
   );
 };

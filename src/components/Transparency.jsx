@@ -5,13 +5,11 @@ const transparencyData = [
     title: 'Clean Water Initiative',
     fundsUsed: '$50,000',
     outcomes: 'Provided clean water to 10,000 people, reduced waterborne diseases by 60%',
-    alt: 'Clean Water Initiative Transparency Data',
   },
   {
     title: 'Educational Programs',
     fundsUsed: '$30,000',
     outcomes: 'Built 5 new schools, provided education to 1,000 children',
-    alt: 'Educational Programs Transparency Data',
   },
   // Add more transparency data as needed
 ];
@@ -25,7 +23,6 @@ const Transparency = () => {
           <div key={index} className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">{data.title}</h2>
-              <img src={`path/to/image/${data.title.replace(/\s+/g, '-').toLowerCase()}.jpg`} alt={data.alt} />
               <p><strong>Funds Used:</strong> {data.fundsUsed}</p>
               <p><strong>Outcomes:</strong> {data.outcomes}</p>
             </div>

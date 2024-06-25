@@ -1,12 +1,6 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import ProjectTable from './ProjectTable';
-import TaskTable from './TaskTable';
-import TeamMemberTable from './TeamMemberTable';
-import MilestoneTable from './MilestoneTable';
-import ResourceTable from './ResourceTable';
-import CommunicationTable from './CommunicationTable';
 
 const currentProjects = [
   {
@@ -16,7 +10,6 @@ const currentProjects = [
     progress: '70%',
     involvement: 'You can help by donating or volunteering for our water testing and distribution events.',
     image: '/images/project1.jpg',
-    alt: 'Clean Water Initiative Project',
     position: [1.2921, 36.8219], // Nairobi, Kenya
   },
   {
@@ -26,7 +19,6 @@ const currentProjects = [
     progress: '50%',
     involvement: 'Join us as a volunteer teacher or donate educational materials.',
     image: '/images/project2.jpg',
-    alt: 'Educational Programs Project',
     position: [0.3476, 32.5825], // Kampala, Uganda
   },
   {
@@ -36,7 +28,6 @@ const currentProjects = [
     progress: '80%',
     involvement: 'Support us by donating medical supplies or funds for renovation.',
     image: '/images/project3.jpg',
-    alt: 'Healthcare Services Project',
     position: [-1.2921, 36.8219], // Nairobi, Kenya
   },
 ];
@@ -48,7 +39,6 @@ const pastProjects = [
     outcomes: 'Increased crop yield by 40% and improved food security for 5,000 families.',
     impactReport: 'Read the full impact report here.',
     image: '/images/project4.jpg',
-    alt: 'Agricultural Development Project',
   },
   {
     title: 'Women Empowerment',
@@ -56,7 +46,6 @@ const pastProjects = [
     outcomes: 'Empowered 500 women to start their own businesses.',
     impactReport: 'Read the full impact report here.',
     image: '/images/project5.jpg',
-    alt: 'Women Empowerment Project',
   },
 ];
 
@@ -82,7 +71,7 @@ const Projects = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {currentProjects.map((project, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
-              <figure><img src={project.image} alt={project.alt} /></figure>
+              <figure><img src={project.image} alt={project.title} /></figure>
               <div className="card-body">
                 <h2 className="card-title">{project.title}</h2>
                 <p>{project.description}</p>
@@ -100,7 +89,7 @@ const Projects = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {pastProjects.map((project, index) => (
             <div key={index} className="card bg-base-100 shadow-xl">
-              <figure><img src={project.image} alt={project.alt} /></figure>
+              <figure><img src={project.image} alt={project.title} /></figure>
               <div className="card-body">
                 <h2 className="card-title">{project.title}</h2>
                 <p>{project.description}</p>
@@ -130,16 +119,6 @@ const Projects = () => {
             ))}
           </MapContainer>
         </div>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-3xl font-bold">Project Management</h2>
-        <ProjectTable />
-        <TaskTable />
-        <TeamMemberTable />
-        <MilestoneTable />
-        <ResourceTable />
-        <CommunicationTable />
       </section>
     </div>
   );

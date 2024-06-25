@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-/* Ensure all img tags include the alt attribute with descriptive text */
 const QuickLinks = () => {
   return (
     <div className="p-10 bg-base-200 text-center">
