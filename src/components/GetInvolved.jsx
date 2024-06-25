@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const volunteerOpportunities = [
   {
@@ -49,7 +49,24 @@ const upcomingEvents = [
   },
 ];
 
+const predefinedDonations = [
+  { amount: 10, description: 'Provide school supplies for one child.' },
+  { amount: 25, description: 'Provide clean water for a family for a month.' },
+  { amount: 50, description: 'Support healthcare services for a community.' },
+  { amount: 100, description: 'Fund a community development project.' },
+];
+
 const GetInvolved = () => {
+  const [donationAmount, setDonationAmount] = useState('');
+  const [recurring, setRecurring] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('');
+
+  const handleDonationSubmit = (e) => {
+    e.preventDefault();
+    // Handle donation submission logic here
+    console.log('Donation submitted:', { donationAmount, recurring, paymentMethod });
+  };
+
   return (
     <div className="p-10 bg-base-200 text-center">
       <section className="mb-10">
@@ -113,6 +130,70 @@ const GetInvolved = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-3xl font-bold">Make a Donation</h2>
+        <form onSubmit={handleDonationSubmit} className="space-y-4">
+          <input type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" required />
+          <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" required />
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold">Select Donation Amount</h3>
+            {predefinedDonations.map((donation, index) => (
+              <div key={index} className="flex items-center">
+                <input
+                  type="radio"
+                  name="donationAmount"
+                  value={donation.amount}
+                  onChange={(e) => setDonationAmount(e.target.value)}
+                  className="radio radio-primary"
+                  required
+                />
+                <label className="ml-2">{`$${donation.amount} - ${donation.description}`}</label>
+              </div>
+            ))}
+            <div className="flex items-center">
+              <input
+                type="radio"
+                name="donationAmount"
+                value="custom"
+                onChange={(e) => setDonationAmount(e.target.value)}
+                className="radio radio-primary"
+              />
+              <input
+                type="number"
+                placeholder="Custom Amount"
+                className="input input-bordered w-full max-w-xs ml-2"
+                onChange={(e) => setDonationAmount(e.target.value)}
+                disabled={donationAmount !== 'custom'}
+              />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold">Payment Method</h3>
+            <select
+              className="select select-bordered w-full max-w-xs"
+              value={paymentMethod}
+              onChange={(e) => setPaymentMethod(e.target.value)}
+              required
+            >
+              <option value="" disabled>Select Payment Method</option>
+              <option value="creditCard">Credit/Debit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="mobilePayment">Mobile Payment</option>
+            </select>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              className="checkbox checkbox-primary"
+              checked={recurring}
+              onChange={(e) => setRecurring(e.target.checked)}
+            />
+            <label className="ml-2">Make this a monthly recurring donation</label>
+          </div>
+          <button type="submit" className="btn btn-primary">Donate</button>
+        </form>
       </section>
     </div>
   );
